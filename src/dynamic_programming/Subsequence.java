@@ -1,5 +1,8 @@
 package dynamic_programming;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 /**
  * @ClassName: Subsequence   
  * @Description: 子序列相关问题解题模板   
@@ -63,6 +66,37 @@ public class Subsequence {
         }
 
         return max;
+    }
+	
+	/**
+	 * @Description: (思路一扩展)LIS如何运用到二维数组中——难点在于排序技巧  
+	 * 				俄罗斯套娃信封问题：给定一些标记了宽度和高度的信封，宽度和高度以整数对形式 (w, h) 出现。当另一个信封的宽度和高度都比这个信封大的时候，这个信封就可以放进另一个信封里
+	 * 							请计算最多能有多少个信封能组成一组“俄罗斯套娃”信封（即可以把一个信封放到另一个信封里面）。
+	 * @param envelopes
+	 * @return
+	 */
+	public int maxEnvelopes(int[][] envelopes) {
+		
+		/*
+		 * 先对宽度w进行升序排序，如果遇到w相同的情况，则按照高度h降序排序。之后把所有的h作为一个数组，在这个数组上计算 LIS 的长度就是答案。
+		 * 关键点：
+		 * 		对于宽度w相同的数对，要对其高度h进行降序排序。因为两个宽度相同的信封不能相互包含的，而逆序排序保证在w相同的数对中最多只选取一个计入 LIS。
+		 */
+        int n = envelopes.length;
+        //按宽度升序排列，如果宽度一样，则按高度降序排列
+        Arrays.sort(envelopes,new Comparator<int[]>() {
+			@Override
+			public int compare(int[] a, int[] b) {
+				return a[0]==b[0]? b[1]-a[1] : a[0]-b[0];
+			}
+		});
+        //对高度数组寻找LIS
+        int[] height = new int[n];
+        for(int i=0; i<n; i++){
+            height[i] = envelopes[i][1];
+        }
+
+        return lengthOfLIS(height);
     }
 	
 	/**
