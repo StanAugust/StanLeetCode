@@ -55,7 +55,7 @@ public class PathProblemsSummary {
         if (root == null) {
             return 0;
         }
-        //1.左孩子和有孩子都为空的情况，说明到达了叶子节点，直接返回1即可
+        //1.左孩子和右孩子都为空的情况，说明到达了叶子节点，直接返回1即可
         if (root.left == null && root.right == null) {
             return 1;
         }

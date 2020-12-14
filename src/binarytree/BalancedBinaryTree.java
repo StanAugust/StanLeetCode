@@ -60,12 +60,10 @@ public class BalancedBinaryTree {
 	 * 空间复杂度：主要取决于递归调用的层数，不超过n
 	 */
 	private boolean bottomUpRecursion(TreeNode root) {
-		
 		return height(root) >= 0;
 	}
 	
 	private int height(TreeNode node) {
-		
 		if(node == null)	return 0;
 		
 		/*

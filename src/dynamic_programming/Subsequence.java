@@ -42,7 +42,7 @@ public class Subsequence {
 	/**
 	 * @Description: 给定一个无序的整数数组，找到其中最长上升子序列的长度。 (思路一)
 	 * @param nums 	eg:[10,9,2,5,3,7,101,18]
-	 * @return 		eg:4([2,3,7,101])
+	 * @return 		eg:4 ([2,3,7,101])
 	 */
 	public int lengthOfLIS(int[] nums) {
 
@@ -114,8 +114,7 @@ public class Subsequence {
 		// dp[0][j]和dp[i][0]均为0
 		// java int数组初始化均为0
 
-		// 用两个指针 i 和 j 从后往前遍历 s1 和 s2，如果 s1[i]==s2[j]，那么这个字符一定在 lcs中；否则的话，s1[i] 和 s2[j]
-		// 这两个字符至少有一个不在 lcs 中，需要丢弃一个。
+		// 用两个指针 i 和 j 从后往前遍历 s1 和 s2，如果 s1[i]==s2[j]，那么这个字符一定在 lcs中；否则的话，s1[i] 和 s2[j] 这两个字符至少有一个不在 lcs 中，需要丢弃一个。
 		for (int i = 1; i <= len1; i++) {
 			for (int j = 1; j <= len2; j++) {
 				if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
@@ -153,12 +152,12 @@ public class Subsequence {
 			for (int j = 1; j <= len2; j++) {
 
 				if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
-					dp[i][j] = dp[i - 1][j - 1]; 		// 如果两个字符相等，则啥也别做（skip），i、j同时向前移动
+					dp[i][j] = dp[i - 1][j - 1]; 			// 如果两个字符相等，则啥也别做（skip），i、j同时向前移动
 				} else {
-					dp[i][j] = min(dp[i - 1][j] + 1, 	// 删除; 直接把s[i]这个字符删掉，前移i，继续跟j对比
-							dp[i][j - 1] + 1, 			// 插入; 直接在s1[i]插入一个和s2[j]一样的字符, 那么s2[j]就被匹配了，前移 j，继续跟 i 对比
-							dp[i - 1][j - 1] + 1 		// 替换; 直接把s1[i]替换成s2[j],这样它俩就匹配了, 同时前移i,j继续对比
-					);
+					dp[i][j] = min(dp[i - 1][j] + 1, 		// 删除; 直接把s[i]这个字符删掉，前移i，继续跟j对比
+								   dp[i][j - 1] + 1, 		// 插入; 直接在s1[i]插入一个和s2[j]一样的字符, 那么s2[j]就被匹配了，前移 j，继续跟 i 对比
+							       dp[i - 1][j - 1] + 1 	// 替换; 直接把s1[i]替换成s2[j],这样它俩就匹配了, 同时前移i,j继续对比
+								  );
 				}
 			}
 		}
