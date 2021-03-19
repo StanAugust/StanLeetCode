@@ -20,10 +20,16 @@ public class ValidateBST {
 		 * 节点的右子树只包含大于当前节点的数。
 		 * 所有左子树和右子树自身必须也是二叉搜索树。
 		 */
-		
 		return isValisBST(root, null, null);
 	}
 	
+	/**
+	 * @Description: 如果当前节点会对下面的子节点有整体影响，通过辅助函数增长参数列表，借助参数传递信息  
+	 * @param root
+	 * @param min
+	 * @param max
+	 * @return
+	 */
 	private boolean isValisBST(TreeNode root, TreeNode min, TreeNode max) {
 		
 		if(root == null)	return true;
