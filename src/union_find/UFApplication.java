@@ -20,7 +20,6 @@ public class UFApplication {
 	 * 并查集的应用：
 	 * 		1.DFS的替代(虽然实现复杂一些，甚至效率也略低，但这是使用 Union-Find 算法的通用思想，可以一学)
 	 * 		2.判断等价关系
-	 * 
 	 */
 	
 	/**

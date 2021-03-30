@@ -3,6 +3,12 @@ package linkedlist;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * @ClassName: LinkedListCycle   
+ * @Description: 带有环的链表   
+ * @author Stan
+ * @date: 2021年3月30日
+ */
 public class LinkedListCycle {
 	
 	/**
