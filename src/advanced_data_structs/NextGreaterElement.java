@@ -10,7 +10,7 @@ import java.util.Stack;
  */
 public class NextGreaterElement {
 	/*
-	 * 单调栈实际上就是栈，只是用了一些巧妙的逻辑，是的每次新元素入栈后，栈内的元素都保持有序
+	 * 单调栈实际上就是栈，只是用了一些巧妙的逻辑，使得每次新元素入栈后，栈内的元素都保持有序
 	 * 
 	 * 单调栈用途不太广泛，只用来处理 NextGreaterElement 这一典型问题
 	 */
