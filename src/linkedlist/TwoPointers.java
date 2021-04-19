@@ -1,14 +1,20 @@
 package linkedlist;
 
 /**
- * @ClassName: TwoPointer   
+ * @ClassName: TwoPointers   
  * @Description: 双指针   
  * @author Stan
  * @date: 2021年4月18日
  */
-public class TwoPointer {
+public class TwoPointers {
 	/*
-	 * 快慢指针一般都初始化指向链表的头结点 head，前进时快指针 fast 在前，慢指针 slow 在后，巧妙解决一些链表中的问题
+	 * 快慢指针一般都初始化指向链表的头结点 head，前进时快指针 fast 在前，慢指针 slow 在后，巧妙解决一些链表中的问题：
+	 * 
+	 * 1.判定链表中是否含有环
+	 * 2.已知链表中含有环，返回这个环的起始位置
+	 * 3.寻找链表的中点
+	 * 4.寻找链表的倒数第 n 个元素
+	 * ...
 	 */
 	
 	/**
