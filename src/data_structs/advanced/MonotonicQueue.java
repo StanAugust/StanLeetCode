@@ -13,7 +13,7 @@ public class MonotonicQueue {
 	/*
 	 * 单调队列，同样地，也只是一个队列，但是在往队内push时，进行了额外的操作，使得队列中元素保持有序
 	 * 
-	 * 单调队列可以解决滑动窗口相关问题
+	 * 单调队列可以解决滑动窗口相关问题，见{@link UseMonotonicQueue}
 	 */
 	
 	private Deque<Integer> deque = new LinkedList<>();
