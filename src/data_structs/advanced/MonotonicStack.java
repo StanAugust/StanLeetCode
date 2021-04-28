@@ -3,16 +3,16 @@ package data_structs.advanced;
 import java.util.Stack;
 
 /**
- * @ClassName: NextGreaterElement   
- * @Description: 单调栈的应用   
+ * @ClassName: MonotonicStack   
+ * @Description: 单调栈及其应用 NextGreaterElement  
  * @author Stan
  * @date: 2021年3月30日
  */
-public class NextGreaterElement {
+public class MonotonicStack {
 	/*
 	 * 单调栈实际上就是栈，只是用了一些巧妙的逻辑，使得每次新元素入栈后，栈内的元素都保持有序
 	 * 
-	 * 单调栈用途不太广泛，只用来处理 NextGreaterElement 这一典型问题
+	 * 单调栈用途不太广泛，只用来处理  NextGreaterElement 这一典型问题
 	 */
 	
 	/**
