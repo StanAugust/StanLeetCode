@@ -6,17 +6,12 @@ import java.util.List;
 
 /**
  * @ClassName: SlidingWindow   
- * @Description: 双指针之滑动窗口   
+ * @Description: 双指针之滑动窗口 (用来解决子串匹配问题 )
  * @author Stan
  * @date: 2021年4月13日
  */
 public class SlidingWindow {
 	/*
-	 * 双指针主要分为两类：
-	 *  【快慢指针】：主要解决链表中的问题，比如典型的判定链表中是否包含环（详见{@link TwoPointers}）
-	 * 	【左右指针】：主要解决数组（或者字符串）中的问题，比如二分查找（详见{@link BinarySearch}）、反转数组等
-	 * 			 这边主要介绍滑动窗口算法，用来解决子串匹配问题
-	 * 
 	 * 框架：
 	 * 
 	 * Map<Character, Integer> need, window;
