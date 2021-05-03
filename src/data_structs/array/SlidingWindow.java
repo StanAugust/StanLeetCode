@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import data_structs.linkedlist.TwoPointers;;
-
 /**
  * @ClassName: SlidingWindow   
  * @Description: 双指针之滑动窗口   
@@ -281,6 +279,7 @@ public class SlidingWindow {
 	 * @return			4 (将中间的一个'A'替换为'B',字符串变为 "AABBBBA"。子串 "BBBB" 有最长重复字母)
 	 */
 	public int characterReplacement(String s, int k) {
+		// 单个字符串匹配的问题，只需要window即可
 		HashMap<Character, Integer> window = new HashMap<>();
 
         int left=0, right=0;
