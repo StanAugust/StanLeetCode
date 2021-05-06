@@ -31,6 +31,31 @@ public class PathProblemsSummary {
         maxDia = Math.max(maxDia, L+R+1); 	// 更新ans
         return Math.max(L, R) + 1; 			// 返回该节点为根的子树的深度
     }
+	
+	/**
+	 * @Description: 124. 二叉树中的最大路径和  
+	 * 					(路径 被定义为一条从树中任意节点出发，沿父节点-子节点连接，达到【任意节点】的序列。同一个节点在一条路径序列中 至多出现一次 。该路径 至少包含一个 节点，且不一定经过根节点。)
+	 * @param root	eg: root = [1,-2,3]
+	 * @return			4(最优路径是1 -> 3 ，路径和为1 + 3 = 6)
+	 */
+	private int maxPath = Integer.MIN_VALUE;
+	
+	public int maxPathSum(TreeNode root) {
+		// 整体思路和上面一样
+        maxPath = root.val;
+        dfs(root);
+        return maxPath;
+    }
+	private int dfs(TreeNode root){
+        if(root == null)    return 0;
+
+        int L = Math.max(dfs(root.left), 0);	// 要注意求最大路径和，所以如果子节点值为负数，起反作用，直接归零
+        int R = Math.max(dfs(root.right), 0);
+
+        maxPath = Math.max(maxPath, L+R+root.val);
+
+        return Math.max(L, R) + root.val;
+    }
 		
 	/**
 	 * @Description: 二叉树的最大深度  
